@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Main from './components/Main.js'
 import Footer from './components/Footer.js'
+import Header from './components/Header.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.PureComponent {
@@ -51,7 +52,9 @@ class App extends React.PureComponent {
   render() {
     return (
       <div className="App">
+        <Header />
           <div className="container">
+
           <h1>Guestbook</h1>
           <Main
             guests={this.state.guests}
