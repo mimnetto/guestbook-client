@@ -9,56 +9,46 @@ class App extends React.PureComponent {
   state = {
     guests: []
   }
-
   componentDidMount = () => {
     this.getGuests()
   }
-
   getGuests = () => {
     axios
-      .get('https://young-guestbook-api.herokuapp.com/guests')
+      .get('/guests')
       .then(response => this.setState({ guests: response.data }))
   }
-
   handleAdd = (event, formInputs) => {
   axios
-    .post('https://young-guestbook-api.herokuapp.com/guests', formInputs)
+    .post('/guests', formInputs)
     .then(jsonedGuest => this.setState({guests: [jsonedGuest.data, ...this.state.guests]}))
-}
-
+  }
   handleDelete = deletedGuest => {
-  axios
-    .delete(`https://young-guestbook-api.herokuapp.com/guests/${deletedGuest._id}`)
-    .then(() => {
-      this.setState(state => {
-        const guests = state.guests.filter(
-          (guest, index) => guest._id !== deletedGuest._id
-        )
-        return { guests }
-      })
-    })
-}
-
-
-handleUpdate = (event, formInputs) => {
-      event.preventDefault()
-      axios
-        .put(`https://young-guestbook-api.herokuapp.com/guests/${formInputs._id}`, formInputs)
-        .then(() => {
-          this.getGuests()
+    axios
+      .delete(`/guests/${deletedGuest._id}`)
+      .then(() => {
+        this.setState((state) => {
+          const guests = state.guests.filter((guest) => {
+            return guest._id !== deletedGuest._id
+          })
+          return { guests }
         })
-    }
-
-
-
-
-
+      })
+  }
+  handleUpdate = (formInputs) => {
+    // event.preventDefault()
+    console.log(formInputs);
+    axios
+      .put(`/guests/${formInputs.id}`, formInputs)
+      .then((resp) => {
+      
+        this.getGuests()
+      })
+  }
   render() {
     return (
       <div className="App">
         <Header />
           <div className="container">
-
           <h1>Guestbook</h1>
           <Main
             guests={this.state.guests}

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import UpdateForm from './UpdateForm.js'
+import UpdateForm from './UpdateForm'
 
 
  class Guest extends Component {
@@ -12,7 +12,7 @@ import UpdateForm from './UpdateForm.js'
   render () {
     const {guest, handleDelete, handleUpdate} = this.props
     return (
-      <React.Fragment>
+    <>
       { this.state.formVisible
       ? <UpdateForm
           guest={guest}
@@ -32,7 +32,7 @@ import UpdateForm from './UpdateForm.js'
              </div>
       }
 
-       </React.Fragment>
+       </>
     )
   }
 }

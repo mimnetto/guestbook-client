@@ -13,25 +13,32 @@ class UpdateForm extends Component {
        wish: '',
        side: ''
      }
+
      this.handleSubmit = this.handleSubmit.bind(this)
      this.handleChange = this.handleChange.bind(this)
    }
 
-     componentDidMount() {
-       if (this.props.guest) {
-         this.setState({
-           name: this.props.guest.name,
-           from: this.props.guest.from,
-           memory: this.props.guest.memory,
-           wish: this.props.guest.wish,
-           side: this.props.guest.side,
-           id: this.props.guest._id
-         })
-       }
-     }
+     // componentDidMount() {
+     //   if (this.props.guest) {
+     //     this.setState({
+     //       name: this.props.guest.name,
+     //       from: this.props.guest.from,
+     //       memory: this.props.guest.memory,
+     //       wish: this.props.guest.wish,
+     //       side: this.props.guest.side,
+     //       id: this.props.guest._id
+     //     })
+     //   }
+     // }
 
      handleChange = event => {
-       this.setState({ [event.target._id]: event.target.value })
+       // each input has event.target.name == name of Input
+       // event.target.value == new value
+       const { target } = event;
+       this.setState({ [target.name]: target.value });
+     console.log(target.value);
+       // this.setState({ target.name })
+       // this.setState({ [event.target._id]: event.target.value })
      }
   // will change all the values of each input, rather than having to write a function for each one
 
@@ -39,13 +46,14 @@ class UpdateForm extends Component {
   // this function will get lifted all the way up back to the app component, that will allow the main list to update after this function is completed
   handleSubmit(event) {
     event.preventDefault()
-    this.props.handleSubmit(event, {
+    console.log(this.props);
+    this.props.handleSubmit({
       name: this.state.name,
       from: this.state.from,
       memory: this.state.memory,
       wish: this.state.wish,
       side: this.state.side,
-      id: this.state._id
+      id: this.props.guest._id
     })
 
     // clears the form
@@ -63,7 +71,7 @@ class UpdateForm extends Component {
   }
   render() {
     return (
-        <form onSubmit={this.handleUpdate} id={this.props._id}>
+        <form onSubmit={this.handleSubmit}>
           <Input
             handleChange={this.handleChange}
             name={'name'}
@@ -71,6 +79,7 @@ class UpdateForm extends Component {
             title={'Name'}
             type={'text'}
             value={this.state.value}
+            id={'name'}
           />
           <Input
             handleChange={this.handleChange}
