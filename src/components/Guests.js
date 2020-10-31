@@ -6,7 +6,7 @@ function Guests (props) {
     return (
       <div>
         {guests.map(guest => <Guest
-          key={guest.id}
+          key={guest._id}
           guest={guest}
           handleDelete={handleDelete}
           handleUpdate={handleUpdate}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import Form from './Form'
+import UpdateForm from './UpdateForm.js'
+
 
  class Guest extends Component {
    state = {
@@ -13,13 +14,13 @@ import Form from './Form'
     return (
       <React.Fragment>
       { this.state.formVisible
-      ? <Form
+      ? <UpdateForm
           guest={guest}
           handleSubmit={handleUpdate}
           toggleForm={this.toggleForm}
         >
           <button onClick={this.toggleForm}> Nevermind!</button>
-        </Form>
+        </UpdateForm>
       :       <div className="guest">
                <h3>{guest.name}</h3>
                  <p>{guest.from}</p>

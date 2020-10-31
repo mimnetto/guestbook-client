@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,21 +13,27 @@ code {
 }
 
 .jumbotron-fluid {
-  min-height:600px;
-  background-image: url(header-bg.jpg);
+  min-height: 450px;
+  background-image: url(img/header-bg.jpg);
   background-position: center;
   background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
   position: relative;
 }
 
-
-
-@media (max-width: 900px) {
+@media (max-width: 992pxpx) {
   .jumbotron-fluid {
-    min-height:300px;
+    min-height: 300px;
   }
 }
+
+@media (max-width: 600px) {
+  .jumbotron-fluid {
+    min-height: 150px;
+  }
+}
+
 
 /* footer form {
   background: var(--midnight-blue);

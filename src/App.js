@@ -28,26 +28,30 @@ class App extends React.PureComponent {
 
   handleDelete = deletedGuest => {
   axios
-    .delete(`https://young-guestbook-api.herokuapp.com/guests/${deletedGuest.id}`)
+    .delete(`https://young-guestbook-api.herokuapp.com/guests/${deletedGuest._id}`)
     .then(() => {
       this.setState(state => {
         const guests = state.guests.filter(
-          (guest, index) => guest.id !== deletedGuest.id
+          (guest, index) => guest._id !== deletedGuest._id
         )
         return { guests }
       })
     })
-    .catch(error => console.log(error))
 }
 
-  handleUpdate = (event, formInputs) => {
-    event.preventDefault()
-    axios
-      .put(`https://young-guestbook-api.herokuapp.com/guests/${formInputs.id}`, formInputs)
-      .then(() => {
-        this.getGuests()
-      })
-  }
+
+handleUpdate = (event, formInputs) => {
+      event.preventDefault()
+      axios
+        .put(`https://young-guestbook-api.herokuapp.com/guests/${formInputs._id}`, formInputs)
+        .then(() => {
+          this.getGuests()
+        })
+    }
+
+
+
+
 
   render() {
     return (
