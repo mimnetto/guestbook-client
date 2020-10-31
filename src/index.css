@@ -35,6 +35,41 @@ code {
 }
 
 
+.modal {
+    position: fixed;
+    top: 20%!important;
+    left: 30%!important;
+    z-index: 1050;
+    display: none;
+    width: 50%!important;
+    height: 50%!important;
+    overflow: hidden;
+    background: white;
+    border: 5px #59B3A5 solid;
+    border-radius: 25px;
+}
+
+
+
+.modal-main {
+  position: fixed;
+  background: white;
+  border: 5px #59B3A5 solid;
+  width: 80%;
+  border-radius: 25px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
 /* footer form {
   background: var(--midnight-blue);
   border-bottom: 5px var(--teal);

@@ -40,7 +40,7 @@ class App extends React.PureComponent {
     axios
       .put(`/guests/${formInputs.id}`, formInputs)
       .then((resp) => {
-      
+
         this.getGuests()
       })
   }
