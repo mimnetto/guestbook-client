@@ -7,29 +7,16 @@ class UpdateForm extends Component {
     // form values, skipping this will give an error warning about
     // component changing uncontrolled input
     this.state = {
-       name: '',
-       from: '',
-       memory: '',
-       wish: '',
-       side: ''
+       name: props.guest.name,
+       from: props.guest.from,
+       memory: props.guest.memory,
+       wish: props.guest.wish,
+       side: props.guest.side
      }
 
      this.handleSubmit = this.handleSubmit.bind(this)
      this.handleChange = this.handleChange.bind(this)
    }
-
-     // componentDidMount() {
-     //   if (this.props.guest) {
-     //     this.setState({
-     //       name: this.props.guest.name,
-     //       from: this.props.guest.from,
-     //       memory: this.props.guest.memory,
-     //       wish: this.props.guest.wish,
-     //       side: this.props.guest.side,
-     //       id: this.props.guest._id
-     //     })
-     //   }
-     // }
 
      handleChange = event => {
        // each input has event.target.name == name of Input
@@ -78,7 +65,7 @@ class UpdateForm extends Component {
             placeholder={'Name'}
             title={'Name'}
             type={'text'}
-            value={this.state.value}
+            value={this.state.name}
             id={'name'}
           />
           <Input
@@ -87,7 +74,7 @@ class UpdateForm extends Component {
             placeholder={'from'}
             title={'From'}
             type={'text'}
-            value={this.state.value}
+            value={this.state.from}
             id={'from'}
           />
           <Input
@@ -96,7 +83,7 @@ class UpdateForm extends Component {
             placeholder={'memory'}
             title={'memory'}
             type={'text'}
-            value={this.state.value}
+            value={this.state.memory}
             id={'name'}
           />
           <Input
@@ -105,7 +92,7 @@ class UpdateForm extends Component {
             placeholder={'wish'}
             title={'wish'}
             type={'text'}
-            value={this.state.value}
+            value={this.state.wish}
             id={'wish'}
           />
           <Input
@@ -114,7 +101,7 @@ class UpdateForm extends Component {
             placeholder={'side'}
             title={'side'}
             type={'text'}
-            value={this.state.value}
+            value={this.state.side}
             id={'side'}
           />
         <input
