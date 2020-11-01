@@ -14,17 +14,17 @@ class App extends React.PureComponent {
   }
   getGuests = () => {
     axios
-      .get('/guests')
+      .get('https://young-guestbook-api.herokuapp.com/guests')
       .then(response => this.setState({ guests: response.data }))
   }
   handleAdd = (event, formInputs) => {
   axios
-    .post('/guests', formInputs)
+    .post('https://young-guestbook-api.herokuapp.com/guests', formInputs)
     .then(jsonedGuest => this.setState({guests: [jsonedGuest.data, ...this.state.guests]}))
   }
   handleDelete = deletedGuest => {
     axios
-      .delete(`/guests/${deletedGuest._id}`)
+      .delete(`https://young-guestbook-api.herokuapp.com/guests/${deletedGuest._id}`)
       .then(() => {
         this.setState((state) => {
           const guests = state.guests.filter((guest) => {
@@ -38,7 +38,7 @@ class App extends React.PureComponent {
     // event.preventDefault()
     console.log(formInputs);
     axios
-      .put(`/guests/${formInputs.id}`, formInputs)
+      .put(`https://young-guestbook-api.herokuapp.com/guests/${formInputs.id}`, formInputs)
       .then((resp) => {
 
         this.getGuests()
