@@ -13,7 +13,6 @@ class App extends React.PureComponent {
   state = {
     guests: [],
     navbarOpen: false,
-    modalClose: true,
   }
 
     handleNavbar = () => {

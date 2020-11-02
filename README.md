@@ -19,7 +19,7 @@ An App for Colleen Kelley and Blake Young's wedding.
 
 ### Struggles
 * CORS
-  * Connecting the backend to the front end was my biggest channel and it took up a very big chunk of time.
+  * Connecting the backend to the front end was my biggest channel and it took up a very big chunk of time. The ID's was a huge problem to solve.
 * The amount of time every little thing took
   * It just felt like every time I want to add a new component (navbar, header, modal etc), it took an entire day, at least. I just wasn't able to do as much as I wanted and had to admit defeat on many things. I wish I had just a few more days to get this where I want it.
 * NPM installs

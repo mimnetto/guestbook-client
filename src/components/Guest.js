@@ -37,7 +37,7 @@ import mapMarkerAlt from '@iconify/icons-fa-solid/map-marker-alt';
                 >
                 </UpdateForm>
                 <button
-                  className="right"
+                  className="right close"
                   onClick={()=>handleDelete(guest)}>
                   Delete
                 </button>

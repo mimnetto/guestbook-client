@@ -6,7 +6,7 @@ const Input = props => {
   const {handleChange, name, placeholder, title, type, value} = props
     return (
       <>
-      <label htmlFor={name}>{title}</label>
+      <label htmlFor={name} for={name}>{title}</label>
         <input
           id={name}
           name={name}
@@ -14,7 +14,9 @@ const Input = props => {
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
+          className="validate"
         />
+
       </>
     )
 }
