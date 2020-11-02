@@ -17,7 +17,7 @@ export default function Header(props) {
               <button className="close" onClick={close}>
                 &times;
               </button>
-            <div className="header"> Modal Title </div>
+            <div className="header"> <h6>Sign The Guestbook</h6> </div>
             <div className="content">
             <Sign handleSubmit={props.handleSubmit} />
             </div>

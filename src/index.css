@@ -5,6 +5,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  background-image: url(img/background.png);
 }
 
 #mainwrap {
@@ -77,8 +78,9 @@ button.signing {
 button.close {
   outline: none!important;
   color: #61060e;
+  background: white!important;
+  font-size: 5vw;
   }
-
 
 .popup-arrow {
   color: rgb(255, 255, 255);
@@ -134,9 +136,9 @@ nav {
 }
 
 
-input.sign-it {
+button.edit {
   font-family: rumba-small, sans-serif;
-  font-size: 12pt;
+  font-size: 1.5vw;
   font-weight: 500;
   font-style: normal;
   background-color: #cec79f;
@@ -144,16 +146,10 @@ input.sign-it {
   border: #61060e solid 2px;
   border-radius: 5px;
   min-width: 150px;
-  min-height: 50px;
+  min-height: 35px;
   display: block;
 }
 
-input.sign-it[type='submit']:hover {
-  cursor: pointer;
-  background-color: #61060e;
-  color: #cec79f;
-  border: #cec79f solid 2px;
-}
 input.update-it {
   font-family: rumba-small, sans-serif;
   font-size: 1.5vw;
@@ -175,17 +171,40 @@ input.update-it[type='submit']:hover {
   border: #cec79f solid 2px;
 }
 
-h4{
+h1{
   font-family: memoriam-headline-pro, sans-serif;
   font-weight: 400;
   font-style: normal;
+  padding: 1%;
+  text-align: center;
+  color: #61060e;
+  text-shadow: 2px 2px #cec79f;
 }
 
 .allGuest {
   background-color: #ffffffd1;
   border: 5px #cec79f solid;
   border-radius: 10px;
-  padding: 1%;
+  padding: 0 3rem 3rem 3rem;
   margin: 1% 10%;
   box-shadow: 0 6px 10px 0 rgba(50 6 13 / 13%);
+}
+
+h6 {
+  text-align: center;
+  font-family: rumba-small, sans-serif;
+}
+
+h3{
+  font-family: oxtail, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+input {
+  text-transform: capitalize;
+}
+
+label {
+  text-transform: capitalize;
 }

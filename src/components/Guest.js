@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import UpdateForm from './UpdateForm'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { Icon, InlineIcon } from '@iconify/react';
+import mapMarkerAlt from '@iconify/icons-fa-solid/map-marker-alt';
 
 
  class Guest extends Component {
@@ -11,13 +13,14 @@ import 'reactjs-popup/dist/index.css';
     <>
     <div className="allGuest">
     <div className="guest">
+      <p className="right"><strong>Posted On:</strong> {(new Date(guest.createdAt)).toLocaleString()}</p>
       <h3>{guest.name}</h3>
-      <p>{guest.from}</p>
-      <p>{guest.memory}</p>
-      <p>{guest.wish}</p>
-      <p>{guest.side}</p>
+      <p><strong><Icon icon={mapMarkerAlt} /> </strong>{guest.from}</p>
+      <p><strong>Memory:</strong> {guest.memory}</p>
+      <p><strong>Wishes:</strong> {guest.wish}</p>
+      <p><strong>Side:</strong> {guest.side}</p>
     </div>
-    <Popup modal trigger={<button>Edit</button>}>
+    <Popup modal trigger={<button className="edit">Edit</button>}>
           {close => (
               <div>
               <button className="close" onClick={close}>

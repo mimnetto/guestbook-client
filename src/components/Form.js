@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Input from './Input.js'
 import "materialize-css/dist/css/materialize.min.css";
 import Form from "react-forms-materialize-css"
+import ReactTooltip from 'react-tooltip';
+
 
 class Sign extends Component {
   constructor(props) {
@@ -41,22 +43,10 @@ class Sign extends Component {
       side: this.state.side,
       id: this.state.id
     })
-    //
-    this.setState({
-      name: '',
-      from: '',
-      memory: '',
-      wish: '',
-      side: ''
-    })
-    if (this.props.guest) {
-      this.props.toggleForm()
-    }
   }
   render() {
     return (
         <form onSubmit={this.handleSubmit}>
-          <div className="input-field">
           <Input
             handleChange={this.handleChange}
             name={'name'}
@@ -69,7 +59,7 @@ class Sign extends Component {
           <Input
             handleChange={this.handleChange}
             name={'from'}
-            placeholder={'from'}
+            placeholder={'I\'m from..'}
             title={'From'}
             type={'text'}
             value={this.state.from}
@@ -78,7 +68,7 @@ class Sign extends Component {
           <Input
             handleChange={this.handleChange}
             name={'memory'}
-            placeholder={'memory'}
+            placeholder={'Favorite Memory of the Couple'}
             title={'memory'}
             type={'text'}
             value={this.state.memory}
@@ -87,7 +77,7 @@ class Sign extends Component {
           <Input
             handleChange={this.handleChange}
             name={'wish'}
-            placeholder={'wish'}
+            placeholder={'Wish'}
             title={'wish'}
             type={'text'}
             value={this.state.wish}
@@ -96,19 +86,21 @@ class Sign extends Component {
           <Input
             handleChange={this.handleChange}
             name={'side'}
-            placeholder={'side'}
+            placeholder={'Colleen, Blake or Both'}
             title={'side'}
             type={'text'}
             value={this.state.side}
             id={'side'}
           />
         <input
-          className="sign-it"
+          className="update-it"
           type="submit"
+          data-tip='Signed! Thank you!'
+          data-event='click focus'
           value={this.props.guest ? 'Sign' : 'Sign'}
         />
+        <ReactTooltip globalEventOff='click' />
         {this.props.children}
-      </div>
       </form>
     )
   }

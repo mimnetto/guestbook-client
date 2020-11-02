@@ -6,6 +6,7 @@ const Input = props => {
   const {handleChange, name, placeholder, title, type, value} = props
     return (
       <>
+      <label htmlFor={name}>{title}</label>
         <input
           id={name}
           name={name}
