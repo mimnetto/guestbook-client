@@ -1,13 +1,11 @@
 import React from 'react'
-import Form from './Form.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-function Footer(props) {
-  return (
-    <footer>
-      <h1>Footer</h1>
-      <Form handleSubmit={props.handleSubmit} />
-    </footer>
-  )
+export default function Footer(props) {
+    return (
+      <footer>
+        <p>Made with <FontAwesomeIcon icon={faHeart} /> by Mimi General Assembly SEIR 810 Moss</p>
+      </footer>
+    )
 }
-
-export default Footer

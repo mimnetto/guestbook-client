@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
-
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
@@ -72,6 +71,7 @@ const NavLinks = styled(animated.ul)`
   justify-self: end;
   list-style-type: none;
   margin: auto 0;
+  display: inherit;
 
   & a {
     color: #dfe6e9;
@@ -79,7 +79,7 @@ const NavLinks = styled(animated.ul)`
     font-size: 62.5%;
     font-weight: 600;
     border-bottom: 1px solid transparent;
-    margin: 0 1.5rem;
+    margin: 0 .5rem;
     transition: all 300ms linear 0s;
     text-decoration: none;
     cursor: pointer;

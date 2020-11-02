@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Input from './Input.js'
+import "materialize-css/dist/css/materialize.min.css";
+import Form from "react-forms-materialize-css"
 
-class Form extends Component {
+class Sign extends Component {
   // older syntax
   // must pass props as argument
   // must call super(props)
@@ -117,8 +119,9 @@ class Form extends Component {
             id={'side'}
           />
         <input
+          className="sign-it"
           type="submit"
-          value={this.props.guest ? 'update this guest' : 'add a guest'}
+          value={this.props.guest ? 'Sign' : 'Sign'}
         />
         {this.props.children}
       </form>
@@ -126,4 +129,4 @@ class Form extends Component {
   }
 }
 
-export default Form
+export default Sign

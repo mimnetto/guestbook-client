@@ -5,7 +5,7 @@ import logo from "../../img/logo-min.png";
 
 const Brand = () => {
   return (
-    <Image src={logo} alt="Colleen ♥ Blake" />
+    <a href="/"><Image src={logo} alt="Colleen ♥ Blake" /></a>
   )
 }
 

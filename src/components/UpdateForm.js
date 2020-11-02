@@ -106,7 +106,7 @@ class UpdateForm extends Component {
           />
         <input
           type="submit"
-          value={this.props.guest ? 'update this guest' : 'add a guest'}
+          value={this.props.guest ? 'Update' : 'Update'}
         />
         {this.props.children}
       </form>
