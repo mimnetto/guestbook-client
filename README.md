@@ -6,7 +6,7 @@ An App for Colleen Kelley and Blake Young's wedding.
 ## Minimum Viable Product
 - [x] A git repository not inside the class repo.
 - [x] Be deployed online** and accessible to the public.
-- [x] *link to your hosted working app* ![Heroku](https://colleen-blake-wedding.herokuapp.com/)
+- [x] *link to your hosted working app* [Heroku](https://colleen-blake-wedding.herokuapp.com/)
 - [x] Successful Cors [Repo for API](https://github.com/mimnetto/guestbook_backend)
 - [x] *teach yourself something new*  MERN Stack (Mongo, Express, React, Node) using Create React App.
 
@@ -24,6 +24,8 @@ An App for Colleen Kelley and Blake Young's wedding.
   * It just felt like every time I want to add a new component (navbar, header, modal etc), it took an entire day, at least. I just wasn't able to do as much as I wanted and had to admit defeat on many things. I wish I had just a few more days to get this where I want it.
 * NPM installs
   * It just got overwhelming. I trashed my first react app after a few days because I felt I installed to much and was losing track of stuff.
+* Feeling Overwhelmed
+  * Especially at first. Every time I sat down I just wanted to cry.
 
 ### Failed Attempts
 * Ruby on Rails backend
