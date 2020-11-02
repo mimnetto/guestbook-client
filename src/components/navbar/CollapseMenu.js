@@ -16,10 +16,10 @@ const CollapseMenu = (props) => {
       }}
       >
         <NavLinks>
-          <li><a href="/" onClick={props.handleNavbar}>link n1</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n2</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n3</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n4</a></li>
+          <li><a href="/" onClick={props.handleNavbar}>Guestbook</a></li>
+          <li><a href="/" onClick={props.handleNavbar}>Our Story</a></li>
+          <li><a href="/" onClick={props.handleNavbar}>Party</a></li>
+          <li><a href="/" onClick={props.handleNavbar}>Resistry</a></li>
         </NavLinks>
       </CollapseWrapper>
     );
@@ -30,11 +30,12 @@ const CollapseMenu = (props) => {
 export default CollapseMenu;
 
 const CollapseWrapper = styled(animated.div)`
-  background: #2d3436;
+  background: #61060e;
   position: fixed;
-  top: 4.5rem;
+  top: 3rem;
   left: 0;
   right: 0;
+  z-index: 1;
 `;
 
 const NavLinks = styled.ul`
