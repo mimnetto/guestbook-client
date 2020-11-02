@@ -1,14 +1,27 @@
 import React from 'react'
 import axios from 'axios'
 import Main from './components/Main.js'
-import Footer from './components/Footer.js'
 import Header from './components/Header.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer.js'
+import Navbar from "./components/navbar/Navbar"
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+
+import GlobalStyle from './styles/Global';
 
 class App extends React.PureComponent {
   state = {
-    guests: []
+    guests: [],
+    navbarOpen: false,
+    modalClose: true,
   }
+
+    handleNavbar = () => {
+    this.setState({
+      navbarOpen: !this.state.navbarOpen
+    });
+  }
+
   componentDidMount = () => {
     this.getGuests()
   }
@@ -47,16 +60,23 @@ class App extends React.PureComponent {
   render() {
     return (
       <div className="App">
-        <Header />
-          <div className="container">
+        <>
+          <Navbar
+            navbarState={this.state.navbarOpen}
+            handleNavbar={this.handleNavbar}
+          />
+          <GlobalStyle />
+        </>
+        <Header handleSubmit={this.handleAdd}/>
+          <div className="guest-view">
           <h1>Guestbook</h1>
           <Main
             guests={this.state.guests}
             handleDelete={this.handleDelete}
             handleUpdate={this.handleUpdate}
           />
-          <Footer handleSubmit={this.handleAdd} />
         </div>
+        <Footer />
       </div>
 
     )

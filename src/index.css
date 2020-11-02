@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+@import url("https://use.typekit.net/maf7bgn.css");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#mainwrap {
+  min-height: 100%;
+  position: relative;
+}
+
+.guest-view {
+  height: 100%;
+  margin: 3%;
+  padding-bottom: 50px;
 }
 
 .jumbotron-fluid {
@@ -20,6 +26,24 @@ code {
   background-position: top;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+button.signing {
+  margin-top: 25%;
+  padding: 1%;
+  background-color: #1d212499 !important;
+  border-color: #cec79f !important;
+  border-radius: 25px !important;
+  padding-right: 5% !important;
+  padding-left: 5% !important;
+  font-size: 1.5vw !important;
+  font-family: oxtail, serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #cec79f;
 }
 
 @media (max-width: 992pxpx) {
@@ -31,36 +55,44 @@ code {
 @media (max-width: 600px) {
   .jumbotron-fluid {
     min-height: 150px;
+    margin-top: 50px;
   }
 }
 
-
-.modal {
-    position: fixed;
-    top: 20%!important;
-    left: 30%!important;
-    z-index: 1050;
-    display: none;
-    width: 50%!important;
-    height: 50%!important;
-    overflow: hidden;
-    background: white;
-    border: 5px #59B3A5 solid;
-    border-radius: 25px;
+@media (min-width: 993px){
+.container {
+    margin-left: 5%!important;
+  }
 }
 
+.popup-content {
+  margin: auto;
+  border-radius: 15px;
+  border: 5px #cec79f solid!important;
+  background: rgb(255, 255, 255);
+  width: 60%!important;
+  padding: 15px!important;
+}
+
+button.close {
+  outline: none!important;
+  color: #61060e;
+  }
 
 
-.modal-main {
-  position: fixed;
-  background: white;
-  border: 5px #59B3A5 solid;
-  width: 80%;
-  border-radius: 25px;
-  height: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
 }
 
 .display-block {
@@ -70,10 +102,90 @@ code {
 .display-none {
   display: none;
 }
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
 /* footer */
-/* footer form {
-  background: var(--midnight-blue);
-  border-bottom: 5px var(--teal);
-  width: 95%;
-  box-shadow: 2px 2px 4px black;
-} */
+footer {
+  background: linear-gradient(262deg, rgba(48, 3, 7, 0.9015938395415473) 0%, rgba(106, 21, 28, 0.9044591690544412) 51%, rgba(102, 14, 22, 0.8987285100286533) 100%);
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  bottom: 0;
+  position: relative;
+  color: white;
+}
+
+footer p {
+  margin: 0;
+  size: 1.5vw;
+  font-family: rumba-small, sans-serif;
+}
+
+/* nav */
+nav {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+input.sign-it {
+  font-family: rumba-small, sans-serif;
+  font-size: 12pt;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #cec79f;
+  color: #61060e;
+  border: #61060e solid 2px;
+  border-radius: 5px;
+  min-width: 150px;
+  min-height: 50px;
+  display: block;
+}
+
+input.sign-it[type='submit']:hover {
+  cursor: pointer;
+  background-color: #61060e;
+  color: #cec79f;
+  border: #cec79f solid 2px;
+}
+input.update-it {
+  font-family: rumba-small, sans-serif;
+  font-size: 1.5vw;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #cec79f;
+  color: #61060e;
+  border: #61060e solid 2px;
+  border-radius: 5px;
+  min-width: 100px;
+  min-height: 35px;
+  float: left;
+}
+
+input.update-it[type='submit']:hover {
+  cursor: pointer;
+  background-color: #61060e;
+  color: #cec79f;
+  border: #cec79f solid 2px;
+}
+
+h4{
+  font-family: memoriam-headline-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.allGuest {
+  background-color: #ffffffd1;
+  border: 5px #cec79f solid;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 1% 10%;
+  box-shadow: 0 6px 10px 0 rgba(50 6 13 / 13%);
+}
