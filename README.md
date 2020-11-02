@@ -13,9 +13,12 @@ An App for Colleen Kelley and Blake Young's wedding.
 ## Technologies, Approaches, Fails and Wins
 
 ### Tech & Approaches
+* MERN Stack (Mongo, Express, React, Node) using Create React App
 * Responsive Design
 * Custom css
   * Although I wish I had better organized it, most of the CSS is my own.
+* [Wireframe](public/img/cobl_top.png)
+  * made with photoshop
 
 ### Struggles
 * CORS
@@ -41,7 +44,7 @@ An App for Colleen Kelley and Blake Young's wedding.
 * Starting to get what Karolin means when she says that you eventually realize you can do whatever you want with stuff. There were some things I tried doing with librarys like bootstrap and then just ended up making my own code.
 
 ## Going Forward
-I will be making this website in full. I kept on thinking about how instructors mentioned sometimes you really don't need to use all that fancy react stuff for your project's goal. But since I really wanted to learn Create React, I stuck with it but I *do* feel like a simpler approach will be better for this app in the long run.
+I will be making this website in full. I kept on thinking about how instructors mentioned sometimes you really don't need to use all that fancy react stuff for your project's goal. But since I really wanted to learn Create React, I stuck with it but I *do* feel like a simpler approach will be better for this app in the long run. I hope to have a captcha as an alternative for auths. I will have all the links working and implement more javascript like the date count down from my last guestbook.
 
 ##### Me going into this project
 ![body](public/img/body.png)
