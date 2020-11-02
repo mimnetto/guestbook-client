@@ -17,7 +17,7 @@ An App for Colleen Kelley and Blake Young's wedding.
 * Responsive Design
 * Custom css
   * Although I wish I had better organized it, most of the CSS is my own.
-* [Wireframe](public/img/cobl_top.png)
+* [Wireframe](public/img/top.jpg)
   * made with photoshop
 
 ### Struggles
