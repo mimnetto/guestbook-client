@@ -4,14 +4,8 @@ import "materialize-css/dist/css/materialize.min.css";
 import Form from "react-forms-materialize-css"
 
 class Sign extends Component {
-  // older syntax
-  // must pass props as argument
-  // must call super(props)
-
   constructor(props) {
     super(props)
-    // form values, skipping this will give an error warning about
-    // component changing uncontrolled input
     this.state = {
       name: '',
       from: '',
@@ -19,16 +13,9 @@ class Sign extends Component {
       wish: '',
       side: ''
     }
-    // must bind all functions
-    // all functions must be func () {}
-    // not func = () => {}
-    // in order to reduce headaches
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-
-  // use some logic to determine if the form should be pre-filled for update
-  // or if it should be empty for new, depending on where the form is rendered/whether data was passed in
   componentDidMount() {
     if (this.props.notice) {
       this.setState({
@@ -41,12 +28,9 @@ class Sign extends Component {
       })
     }
   }
-  // will change all the values of each input, rather than having to write a function for each one
   handleChange(event) {
     this.setState({ [event.target.id]: event.target.value })
   }
-  // explicity show what is being passed in
-  // this function will get lifted all the way up back to the app component, that will allow the main list to update after this function is completed
   handleSubmit(event) {
     event.preventDefault()
     this.props.handleSubmit(event, {
@@ -57,7 +41,7 @@ class Sign extends Component {
       side: this.state.side,
       id: this.state.id
     })
-    // clears the form
+    //
     this.setState({
       name: '',
       from: '',
@@ -65,7 +49,6 @@ class Sign extends Component {
       wish: '',
       side: ''
     })
-    // if this is the edit form, change the view back
     if (this.props.guest) {
       this.props.toggleForm()
     }
@@ -73,6 +56,7 @@ class Sign extends Component {
   render() {
     return (
         <form onSubmit={this.handleSubmit}>
+          <div className="input-field">
           <Input
             handleChange={this.handleChange}
             name={'name'}
@@ -124,6 +108,7 @@ class Sign extends Component {
           value={this.props.guest ? 'Sign' : 'Sign'}
         />
         {this.props.children}
+      </div>
       </form>
     )
   }
